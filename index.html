@@ -3,85 +3,715 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Compresión de Imágenes - Tu Nombre</title>
+    <title>Proyecto Compresión de Imágenes | Tu Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 0 20px;
         }
-        .header {
-            background: #2c3e50;
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
         }
-        .section {
-            margin: 3rem 0;
-            padding: 2rem;
-            border-left: 4px solid #3498db;
-            background: #f8f9fa;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
             gap: 1rem;
-            margin: 1rem 0;
+            flex-wrap: wrap;
         }
-        .skill-category {
-            background: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+        
         .btn {
-            display: inline-block;
-            background: #3498db;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--secondary);
             color: white;
-            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 0.5rem;
-            transition: background 0.3s;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
         .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
             background: #2980b9;
         }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        
+        .section-light {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-category li i {
+            color: var(--secondary);
+        }
+        
+        /* Project Parts */
+        .project-part {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .part-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+        }
+        
+        .part-content {
+            padding: 2rem;
+        }
+        
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
+        
         .result-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .result-card h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .metric-card {
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
         }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 0.5rem 0;
+        }
+        
+        .metric-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Proyecto: Compresión de Imágenes y Sistema de Clasificación</h1>
-        <p>Implementación de algoritmos de compresión DCT, clasificación ML con HOG y generación de mosaicos</p>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Proyecto: Compresión de Imágenes y Sistema de Clasificación</h1>
+                <p class="subtitle">Implementación de algoritmos de compresión DCT, clasificación ML con HOG y generación de mosaicos</p>
+                <div class="btn-group">
+                    <a href="https://github.com/tu-usuario/tu-repositorio" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> Ver Código en GitHub
+                    </a>
+                    <a href="docs/TP_finished_rapport.pdf" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Descargar Reporte PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- Aquí iría el contenido que te sugerí en mi respuesta anterior -->
-    <section class="section">
-        <h2>Resumen del Proyecto</h2>
-        <p>En este proyecto implementé un códec de compresión de imágenes basado en la Transformada Coseno Discreta (DCT) que superó en ciertos escenarios al estándar JPEG. Además, desarrollé un sistema de clasificación de dígitos manuscritos que alcanzó 98.9% de precisión usando características HOG, y creé un generador de mosaicos fotográficos.</p>
-        
-        <div>
-            <a href="https://github.com/tu-usuario/tu-repositorio" class="btn">📁 Ver Código en GitHub</a>
-            <a href="docs/TP_finished_rapport.pdf" class="btn">📄 Descargar Reporte PDF</a>
+    <!-- Resumen -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Resumen del Proyecto</h2>
+            </div>
+            <div class="fade-in delay-1">
+                <p>Este proyecto académico integral abarcó tres áreas principales de procesamiento de imágenes e inteligencia artificial. Implementé desde cero un algoritmo de compresión basado en la Transformada Coseno Discreta (DCT) que logró superar al estándar JPEG en ciertos escenarios. Además, desarrollé y evalué múltiples modelos de Machine Learning para clasificación de dígitos manuscritos, mejorando significativamente los resultados mediante el uso del descriptor HOG. Finalmente, creé un generador de mosaicos fotográficos que aplica estos conceptos de manera creativa.</p>
+            </div>
+            
+            <div class="metrics-grid fade-in delay-2">
+                <div class="metric-card">
+                    <i class="fas fa-chart-line fa-2x"></i>
+                    <div class="metric-value">24.65 dB</div>
+                    <div class="metric-label">Mejor PSNR alcanzado</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-brain fa-2x"></i>
+                    <div class="metric-value">98.94%</div>
+                    <div class="metric-label">Precisión con SVM + HOG</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-compress-arrows-alt fa-2x"></i>
+                    <div class="metric-value">6.83x</div>
+                    <div class="metric-label">Mejor ratio de compresión</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-cogs fa-2x"></i>
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Algoritmos comparados</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Continúa con las demás secciones... -->
+    <!-- Habilidades -->
+    <section>
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Habilidades y Tecnologías</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-code"></i> Lenguajes & Librerías</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Python</li>
+                        <li><i class="fas fa-check"></i> NumPy & SciPy</li>
+                        <li><i class="fas fa-check"></i> scikit-image</li>
+                        <li><i class="fas fa-check"></i> scikit-learn</li>
+                        <li><i class="fas fa-check"></i> Matplotlib</li>
+                        <li><i class="fas fa-check"></i> OpenCV</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in delay-1">
+                    <h3><i class="fas fa-cogs"></i> Conceptos Técnicos</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Transformada Coseno Discreta (DCT)</li>
+                        <li><i class="fas fa-check"></i> Compresión de imágenes con pérdida</li>
+                        <li><i class="fas fa-check"></i> Histogram of Oriented Gradients (HOG)</li>
+                        <li><i class="fas fa-check"></i> Machine Learning (KNN, SVM, Árboles)</li>
+                        <li><i class="fas fa-check"></i> Procesamiento de imágenes digitales</li>
+                        <li><i class="fas fa-check"></i> Evaluación de modelos (PSNR, SSIM, ΔE)</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in delay-2">
+                    <h3><i class="fas fa-tasks"></i> Metodologías</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Implementación de algoritmos desde cero</li>
+                        <li><i class="fas fa-check"></i> Optimización de parámetros</li>
+                        <li><i class="fas fa-check"></i> Análisis comparativo cuantitativo</li>
+                        <li><i class="fas fa-check"></i> Validación cruzada</li>
+                        <li><i class="fas fa-check"></i> Ingeniería de características</li>
+                        <li><i class="fas fa-check"></i> Visualización de resultados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parte 1: Compresión de Imágenes -->
+    <section class="section-light">
+        <div class="container">
+            <div class="project-part fade-in">
+                <div class="part-header">
+                    <h2><i class="fas fa-compress-arrows-alt"></i> Parte 1: Compresión de Imágenes con DCT</h2>
+                </div>
+                <div class="part-content">
+                    <h3>Desafío</h3>
+                    <p>Implementar un algoritmo de compresión de imágenes que supere al estándar JPEG en términos de relación compresión-calidad (PSNR) para ciertas configuraciones.</p>
+                    
+                    <h3>Implementación</h3>
+                    <p>Desarrollé desde cero un códec completo que incluye:</p>
+                    <ul>
+                        <li>Conversión del espacio de color RGB a YCbCr</li>
+                        <li>División de la imagen en bloques 8x8 píxeles</li>
+                        <li>Aplicación de la Transformada Coseno Discreta (DCT) a cada bloque</li>
+                        <li>Cuantización utilizando matrices personalizadas</li>
+                        <li>Codificación mediante patrón zig-zag y RLE (Run-Length Encoding)</li>
+                        <li>Almacenamiento eficiente usando pickle</li>
+                    </ul>
+                    
+                    <h3>Optimización</h3>
+                    <p>En lugar de usar la matriz de cuantización estándar de JPEG, implementé un sistema de búsqueda aleatoria para encontrar matrices más eficientes definidas como Q(i,j) = a + b(i+j). Realicé 200 iteraciones con valores aleatorios de a (3-100) y b (1-40).</p>
+                    
+                    <h3>Resultados Clave</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>Comparación con JPEG</h4>
+                            <p>Encontré 3 configuraciones que superaron a JPEG:</p>
+                            <ul>
+                                <li><strong>a=17, b=3</strong>: PSNR=24.65 dB, Ratio=6.83</li>
+                                <li><strong>a=24, b=2</strong>: PSNR=24.44 dB, Ratio=7.43</li>
+                                <li><strong>a=4, b=6</strong>: PSNR=24.44 dB, Ratio=6.24</li>
+                            </ul>
+                            <p>Frente al resultado JPEG: PSNR=24.41 dB, Ratio=5.79</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Análisis Visual</h4>
+                            <p>Aunque las diferencias visuales son mínimas, las métricas cuantitativas demuestran una mejora significativa. El algoritmo logra mayor compresión manteniendo o mejorando la calidad de imagen.</p>
+                            <p>Este resultado muestra que la matriz de cuantización estándar de JPEG no es universalmente óptima y puede mejorarse para imágenes específicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parte 2: Clasificación de Dígitos -->
+    <section>
+        <div class="container">
+            <div class="project-part fade-in">
+                <div class="part-header">
+                    <h2><i class="fas fa-brain"></i> Parte 2: Clasificación de Dígitos Manuscritos</h2>
+                </div>
+                <div class="part-content">
+                    <h3>Desafío</h3>
+                    <p>Desarrollar y evaluar modelos de Machine Learning para clasificar dígitos manuscritos del dataset MNIST, comparando el uso de píxeles en bruto versus características HOG.</p>
+                    
+                    <h3>Metodología</h3>
+                    <p>Utilicé el conjunto de datos MNIST con 70,000 imágenes de 28x28 píxeles. Implementé y comparé tres algoritmos:</p>
+                    <ul>
+                        <li><strong>K-Nearest Neighbors (KNN)</strong> con k=3</li>
+                        <li><strong>Árbol de Decisión</strong> con criterio Gini</li>
+                        <li><strong>SVM</strong> con kernel RBF (C=5, gamma=0.05)</li>
+                    </ul>
+                    <p>Evalué los modelos mediante validación cruzada de 5 folds para obtener resultados robustos.</p>
+                    
+                    <h3>Extracción de Características HOG</h3>
+                    <p>Implementé el descriptor Histogram of Oriented Gradients (HOG) que captura la estructura y forma de los dígitos mediante la distribución de gradientes locales. Esto proporciona características más robustas e invariantes a pequeñas transformaciones.</p>
+                    
+                    <h3>Resultados</h3>
+                    
+                    <h4>Comparación de Modelos (Precisión Promedio)</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Sin HOG</th>
+                                <th>Con HOG</th>
+                                <th>Mejora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>KNN (k=3)</td>
+                                <td>97.12%</td>
+                                <td>97.37%</td>
+                                <td>+0.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Árbol de Decisión (Gini)</td>
+                                <td>87.01%</td>
+                                <td>86.87%</td>
+                                <td>-0.14%</td>
+                            </tr>
+                            <tr>
+                                <td>SVM (RBF)</td>
+                                <td>98.31%</td>
+                                <td>98.94%</td>
+                                <td>+0.63%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>Análisis de Resultados</h4>
+                            <p>El SVM con kernel RBF demostró ser el modelo más efectivo, alcanzando una precisión del 98.94% con características HOG. El uso de HOG mejoró consistentemente los resultados para KNN y SVM, mientras que para Árboles de Decisión no mostró beneficios significativos.</p>
+                            <p>El descriptor HOG proporciona características más compactas y menos ruidosas que los píxeles en bruto, lo que explica la mejora en modelos basados en distancias como KNN y SVM.</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Visualización HOG</h4>
+                            <p>La aplicación de HOG a una imagen PPM permitió visualizar cómo este descriptor captura los bordes y la estructura de la imagen, confirmando su utilidad para tareas de clasificación donde la forma es más importante que los valores exactos de píxeles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parte 3: Mosaicos Fotográficos -->
+    <section class="section-light">
+        <div class="container">
+            <div class="project-part fade-in">
+                <div class="part-header">
+                    <h2><i class="fas fa-th"></i> Parte 3: Generación de Mosaicos Fotográficos</h2>
+                </div>
+                <div class="part-content">
+                    <h3>Desafío</h3>
+                    <p>Crear un mosaico compuesto por miniaturas (thumbnails) que preserve la estructura y apariencia de una imagen de referencia de gran tamaño.</p>
+                    
+                    <h3>Implementación</h3>
+                    <p>Dividí una imagen grande (Tokyo.jpg) en bloques de 32x32 píxeles y utilicé el dataset CIFAR-10 como fuente de miniaturas. Implementé y comparé tres enfoques para encontrar la miniatura más similar a cada bloque:</p>
+                    <ul>
+                        <li><strong>Media RGB</strong>: Calcula el color promedio de cada bloque y miniatura</li>
+                        <li><strong>Histograma HSV</strong>: Utiliza la distribución de colores en el espacio HSV</li>
+                        <li><strong>Combinado</strong>: Combina media RGB con histograma HSV y ajuste de color</li>
+                    </ul>
+                    <p>Para la comparación, utilicé distancias Euclidiana y Cityblock (L1).</p>
+                    
+                    <h3>Evaluación</h3>
+                    <p>Comparé los resultados utilizando tres métricas objetivas:</p>
+                    <ul>
+                        <li><strong>PSNR (Peak Signal-to-Noise Ratio)</strong>: Mide la similitud pixel a pixel</li>
+                        <li><strong>SSIM (Structural Similarity)</strong>: Evalúa la similitud estructural</li>
+                        <li><strong>ΔE (Delta E)</strong>: Mide la diferencia perceptual de color</li>
+                    </ul>
+                    
+                    <h3>Resultados</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>PSNR</th>
+                                <th>SSIM</th>
+                                <th>ΔE (avg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mosaic - Mean RGB</td>
+                                <td>11.531</td>
+                                <td>0.117</td>
+                                <td>19.010</td>
+                            </tr>
+                            <tr>
+                                <td>Mosaic - HSV Histogram</td>
+                                <td>10.022</td>
+                                <td>0.145</td>
+                                <td>22.124</td>
+                            </tr>
+                            <tr>
+                                <td>Mosaic - Combined (RGB+HSV+Adjust)</td>
+                                <td>11.622</td>
+                                <td>0.131</td>
+                                <td>18.411</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>Análisis de Resultados</h4>
+                            <p>El método combinado (RGB+HSV+Adjust) obtuvo el mejor PSNR y la menor diferencia de color (ΔE), demostrando ser el más fiel a la imagen original. Aunque el método HSV obtuvo el mejor SSIM, su rendimiento visual fue menos natural debido a la priorización de la estructura sobre la fidelidad cromática.</p>
+                            <p>El ajuste de color aplicado en el método combinado fue crucial para mejorar la correspondencia cromática entre los bloques originales y las miniaturas seleccionadas.</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Conclusión Visual</h4>
+                            <p>La evaluación visual confirmó los resultados cuantitativos: el mosaico generado con el método combinado presenta la mejor combinación de detalle estructural y fidelidad cromática, creando una representación más reconocible de la imagen original.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusiones -->
+    <section>
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Conclusiones Generales</h2>
+            </div>
+            <div class="results-grid fade-in">
+                <div class="result-card">
+                    <h4><i class="fas fa-compress-arrows-alt"></i> Compresión de Imágenes</h4>
+                    <p>La implementación personalizada del algoritmo de compresión DCT demostró que es posible superar al estándar JPEG optimizando la matriz de cuantización. Los resultados sugieren que matrices adaptativas podrían ofrecer mejoras significativas sobre el enfoque estándar.</p>
+                </div>
+                <div class="result-card">
+                    <h4><i class="fas fa-brain"></i> Clasificación con ML</h4>
+                    <p>El uso de características HOG mejora consistentemente el rendimiento de modelos de clasificación basados en distancias como KNN y SVM. El SVM con kernel RBF se confirmó como el algoritmo más efectivo para esta tarea, alcanzando precisiones cercanas al 99%.</p>
+                </div>
+                <div class="result-card">
+                    <h4><i class="fas fa-th"></i> Mosaicos Fotográficos</h4>
+                    <p>La combinación de múltiples descriptores (RGB + HSV) con ajuste de color produce los mejores resultados en la generación de mosaicos, equilibrando fidelidad estructural y cromática. Este enfoque híbrido supera a métodos que utilizan descriptores individuales.</p>
+                </div>
+            </div>
+            
+            <div class="fade-in delay-1" style="text-align: center; margin-top: 3rem;">
+                <h3>Próximos Pasos</h3>
+                <p>Como extensiones futuras de este trabajo, se podría explorar el uso de matrices de cuantización adaptativas basadas en el contenido de la imagen, la aplicación de redes neuronales convolucionales para la clasificación de dígitos, y la integración de criterios semánticos en la generación de mosaicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>¿Interesado en colaborar?</h3>
+                <p>No dudes en contactarme para oportunidades profesionales o proyectos de investigación.</p>
+                <div class="social-links">
+                    <a href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:tu-email@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2023 Tu Nombre. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // Set initial state
+            fadeElements.forEach(element => {
+                element.style.opacity = "0";
+                element.style.transform = "translateY(20px)";
+                element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            });
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Check on load
+        });
+    </script>
 </body>
 </html>
