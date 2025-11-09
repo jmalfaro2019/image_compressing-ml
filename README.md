@@ -75,6 +75,6 @@ python code/mosaic.py
 📋  [Descargar Reporte PDF](docs/TP_finished_rapport.pdf)
 
 👨‍💻 Autor
-Jose Alfaro - [GitHub](https://github.com/jmalfaro2019) - [LinkedIn](www.linkedin.com/in/jose-alfaro-334327291)
+Jose Alfaro - [GitHub](https://github.com/jmalfaro2019) - [LinkedIn](https://www.linkedin.com/in/jose-alfaro-334327291)
 
 ### ⭐ ¿Te gustó este proyecto? ¡Dale una estrella al repositorio!
