@@ -31,16 +31,12 @@ Proyecto integral que implementa algoritmos de compresión de imágenes, clasifi
 ## 📁 Estructura del Proyecto
 ```
 compression-project/
-├── code/                    # Código fuente del proyecto
-│   ├── compression.py       # Algoritmo de compresión DCT
-│   ├── classification.py    # Modelos ML para MNIST
-│   ├── mosaic.py            # Generador de mosaicos
-│   └── utils.py             # Funciones auxiliares
-├── docs/                    # Documentación
+├── notebooks/                  
+│   ├── TP2_completo.ipynb 
+├── docs/                 
 │   ├── TP_finished_rapport.pdf
 │   └── TP_finished.pdf
 ├── images/                  # Imágenes y resultados
-├── notebooks/               # Jupyter notebooks
 └── index.html               # Página web del proyecto
 ```
 ## ⚡ Instalación y Uso
