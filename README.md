@@ -53,19 +53,12 @@ cd compression-project
 ```
 pip install -r requirements.txt
 ```
-# Ejecutar compresión
+
+# Ejecutar el notebook
 ```
-python code/compression.py
+jupyter notebook notebooks/iris_analysis.ipynb
 ```
-# Ejecutar clasificación
-```
-python code/classification.py
-```
-# Generar mosaicos
-```
-python code/mosaic.py
-```
-## 🔗 [Ver Proyecto en GitHub Pages](www.google.com)
+## 🔗 [Ver Proyecto en GitHub Pages](https://jmalfaro2019.github.io/image_compressing-ml/)
 
 📄  Reporte Completo
 📋  [Descargar Reporte PDF](docs/TP_finished_rapport.pdf)
