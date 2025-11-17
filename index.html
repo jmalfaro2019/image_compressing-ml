@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +17,26 @@
             --text: #333;
             --text-light: #7f8c8d;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background-color: #f9f9f9;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
             background: linear-gradient(135deg, var(--primary), var(--dark));
@@ -45,7 +46,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         header::before {
             content: '';
             position: absolute;
@@ -56,32 +57,32 @@
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
             background-size: cover;
         }
-        
+
         .header-content {
             position: relative;
             z-index: 1;
         }
-        
+
         h1 {
             font-size: 2.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
-        
+
         .subtitle {
             font-size: 1.4rem;
             margin-bottom: 2rem;
             opacity: 0.9;
             font-weight: 300;
         }
-        
+
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -93,36 +94,36 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             background: #2980b9;
         }
-        
+
         .btn-outline {
             background: transparent;
             border: 2px solid white;
         }
-        
+
         .btn-outline:hover {
             background: white;
             color: var(--primary);
         }
-        
+
         /* Sections */
         section {
             padding: 5rem 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             display: block;
@@ -132,12 +133,12 @@
             margin: 1rem auto;
             border-radius: 2px;
         }
-        
+
         .section-light {
             background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -145,19 +146,19 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .skill-category {
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        
+
         .skill-category:hover {
             transform: translateY(-5px);
         }
-        
+
         .skill-category h3 {
             color: var(--primary);
             margin-bottom: 1.5rem;
@@ -165,11 +166,11 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .skill-category ul {
             list-style: none;
         }
-        
+
         .skill-category li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
@@ -177,76 +178,77 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .skill-category li:last-child {
             border-bottom: none;
         }
-        
+
         .skill-category li i {
             color: var(--secondary);
         }
-        
+
         /* Project Parts */
         .project-part {
             margin-bottom: 4rem;
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .part-header {
             background: var(--primary);
             color: white;
             padding: 1.5rem 2rem;
         }
-        
+
         .part-content {
             padding: 2rem;
         }
-        
+
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .result-card {
             background: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 4px solid var(--secondary);
         }
-        
+
         .result-card h4 {
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        
+
         /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
-        
-        th, td {
+
+        th,
+        td {
             padding: 1rem;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
-        
+
         th {
             background: var(--primary);
             color: white;
         }
-        
+
         tr:nth-child(even) {
             background: #f8f9fa;
         }
-        
+
         /* Metrics */
         .metrics-grid {
             display: grid;
@@ -254,27 +256,27 @@
             gap: 1.5rem;
             margin-top: 2rem;
         }
-        
+
         .metric-card {
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
-        
+
         .metric-value {
             font-size: 2rem;
             font-weight: 700;
             color: var(--secondary);
             margin: 0.5rem 0;
         }
-        
+
         .metric-label {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-        
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -282,70 +284,86 @@
             padding: 3rem 0;
             text-align: center;
         }
-        
+
         .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
         }
-        
+
         .social-links {
             display: flex;
             gap: 1rem;
         }
-        
+
         .social-links a {
             color: white;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
-        
+
         .social-links a:hover {
             color: var(--secondary);
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
-            
+
             .subtitle {
                 font-size: 1.2rem;
             }
-            
+
             .btn-group {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
             }
-            
+
             section {
                 padding: 3rem 0;
             }
         }
-        
+
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .fade-in {
             animation: fadeIn 0.8s ease forwards;
         }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
     </style>
 </head>
+
 <body>
     <!-- Back to Portfolio Button -->
     <div class="back-to-portfolio">
@@ -355,33 +373,33 @@
     </div>
 
     <style>
-    .back-to-portfolio {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-    }
+        .back-to-portfolio {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
 
-    .back-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.7rem 1.5rem;
-        background: #2c3e50;
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        font-size: 0.9rem;
-    }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+        }
 
-    .back-btn:hover {
-        background: #3498db;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
+        .back-btn:hover {
+            background: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
     </style>
 
     <!-- Header -->
@@ -389,7 +407,8 @@
         <div class="container">
             <div class="header-content">
                 <h1>Project: Image Compression and Classification System</h1>
-                <p class="subtitle">Implementation of DCT compression algorithms, ML classification with HOG, and mosaic generation</p>
+                <p class="subtitle">Implementation of DCT compression algorithms, ML classification with HOG, and mosaic
+                    generation</p>
                 <div class="btn-group">
                     <a href="https://github.com/jmalfaro2019/image_compressing-ml" class="btn" target="_blank">
                         <i class="fab fa-github"></i> View Code on GitHub
@@ -409,9 +428,14 @@
                 <h2>Project Summary</h2>
             </div>
             <div class="fade-in delay-1">
-                <p>This comprehensive academic project covered three main areas of image processing and artificial intelligence. I implemented from scratch a compression algorithm based on Discrete Cosine Transform (DCT) that managed to surpass the JPEG standard in certain scenarios. Additionally, I developed and evaluated multiple Machine Learning models for handwritten digit classification, significantly improving results through the use of HOG descriptor. Finally, I created a photographic mosaic generator that applies these concepts creatively.</p>
+                <p>This comprehensive academic project covered three main areas of image processing and artificial
+                    intelligence. I implemented from scratch a compression algorithm based on Discrete Cosine Transform
+                    (DCT) that managed to surpass the JPEG standard in certain scenarios. Additionally, I developed and
+                    evaluated multiple Machine Learning models for handwritten digit classification, significantly
+                    improving results through the use of HOG descriptor. Finally, I created a photographic mosaic
+                    generator that applies these concepts creatively.</p>
             </div>
-            
+
             <div class="metrics-grid fade-in delay-2">
                 <div class="metric-card">
                     <i class="fas fa-chart-line fa-2x"></i>
@@ -490,8 +514,9 @@
                 </div>
                 <div class="part-content">
                     <h3>Challenge</h3>
-                    <p>Implement an image compression algorithm that surpasses the JPEG standard in terms of compression-quality ratio (PSNR) for certain configurations.</p>
-                    
+                    <p>Implement an image compression algorithm that surpasses the JPEG standard in terms of
+                        compression-quality ratio (PSNR) for certain configurations.</p>
+
                     <h3>Implementation</h3>
                     <p>I developed a complete codec from scratch that includes:</p>
                     <ul>
@@ -502,10 +527,12 @@
                         <li>Encoding through zig-zag pattern and RLE (Run-Length Encoding)</li>
                         <li>Efficient storage using pickle</li>
                     </ul>
-                    
+
                     <h3>Optimization</h3>
-                    <p>Instead of using the standard JPEG quantization matrix, I implemented a random search system to find more efficient matrices defined as Q(i,j) = a + b(i+j). I performed 200 iterations with random values of a (3-100) and b (1-40).</p>
-                    
+                    <p>Instead of using the standard JPEG quantization matrix, I implemented a random search system to
+                        find more efficient matrices defined as Q(i,j) = a + b(i+j). I performed 200 iterations with
+                        random values of a (3-100) and b (1-40).</p>
+
                     <h3>Key Results</h3>
                     <div class="results-grid">
                         <div class="result-card">
@@ -520,9 +547,21 @@
                         </div>
                         <div class="result-card">
                             <h4>Visual Analysis</h4>
-                            <p>Although visual differences are minimal, quantitative metrics demonstrate significant improvement. The algorithm achieves higher compression while maintaining or improving image quality.</p>
-                            <p>This result shows that the standard JPEG quantization matrix is not universally optimal and can be improved for specific images.</p>
+                            <p>Although visual differences are minimal, quantitative metrics demonstrate significant
+                                improvement. The algorithm achieves higher compression while maintaining or improving
+                                image quality.</p>
+                            <p>This result shows that the standard JPEG quantization matrix is not universally optimal
+                                and can be improved for specific images.</p>
                         </div>
+                    </div>
+                    <!-- Scatter plot comparing JPEG vs random quantization search -->
+                    <div class="result-card fade-in delay-2">
+                        <h4>PSNR vs Compression Ratio (200 Experiments)</h4>
+                        <p>This scatter plot compares JPEG against 200 random quantization matrices tested.
+                            The green points represent the three configurations that surpassed JPEG in both PSNR and
+                            compression ratio.</p>
+                        <img src="images/psnr_scatter.png" alt="PSNR Scatter Comparison"
+                            style="width:100%; border-radius:8px; margin-top:1rem;">
                     </div>
                 </div>
             </div>
@@ -538,22 +577,26 @@
                 </div>
                 <div class="part-content">
                     <h3>Challenge</h3>
-                    <p>Develop and evaluate Machine Learning models to classify handwritten digits from the MNIST dataset, comparing raw pixels versus HOG features.</p>
-                    
+                    <p>Develop and evaluate Machine Learning models to classify handwritten digits from the MNIST
+                        dataset, comparing raw pixels versus HOG features.</p>
+
                     <h3>Methodology</h3>
-                    <p>I used the MNIST dataset with 70,000 images of 28x28 pixels. I implemented and compared three algorithms:</p>
+                    <p>I used the MNIST dataset with 70,000 images of 28x28 pixels. I implemented and compared three
+                        algorithms:</p>
                     <ul>
                         <li><strong>K-Nearest Neighbors (KNN)</strong> with k=3</li>
                         <li><strong>Decision Tree</strong> with Gini criterion</li>
                         <li><strong>SVM</strong> with RBF kernel (C=5, gamma=0.05)</li>
                     </ul>
                     <p>I evaluated the models through 5-fold cross-validation to obtain robust results.</p>
-                    
+
                     <h3>HOG Feature Extraction</h3>
-                    <p>I implemented the Histogram of Oriented Gradients (HOG) descriptor that captures the structure and shape of digits through the distribution of local gradients. This provides more robust features invariant to small transformations.</p>
-                    
+                    <p>I implemented the Histogram of Oriented Gradients (HOG) descriptor that captures the structure
+                        and shape of digits through the distribution of local gradients. This provides more robust
+                        features invariant to small transformations.</p>
+
                     <h3>Results</h3>
-                    
+
                     <h4>Model Comparison (Average Accuracy)</h4>
                     <table>
                         <thead>
@@ -585,17 +628,30 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="results-grid">
                         <div class="result-card">
                             <h4>Results Analysis</h4>
-                            <p>SVM with RBF kernel proved to be the most effective model, achieving 98.94% accuracy with HOG features. Using HOG consistently improved results for KNN and SVM, while for Decision Trees it showed no significant benefits.</p>
-                            <p>The HOG descriptor provides more compact and less noisy features than raw pixels, explaining the improvement in distance-based models like KNN and SVM.</p>
+                            <p>SVM with RBF kernel proved to be the most effective model, achieving 98.94% accuracy with
+                                HOG features. Using HOG consistently improved results for KNN and SVM, while for
+                                Decision Trees it showed no significant benefits.</p>
+                            <p>The HOG descriptor provides more compact and less noisy features than raw pixels,
+                                explaining the improvement in distance-based models like KNN and SVM.</p>
                         </div>
                         <div class="result-card">
                             <h4>HOG Visualization</h4>
-                            <p>Applying HOG to a PPM image allowed visualization of how this descriptor captures edges and image structure, confirming its usefulness for classification tasks where shape is more important than exact pixel values.</p>
+                            <p>Applying HOG to a PPM image allowed visualization of how this descriptor captures edges
+                                and image structure, confirming its usefulness for classification tasks where shape is
+                                more important than exact pixel values.</p>
                         </div>
+                    </div>
+                    <!-- HOG Visualization / Feature Distribution -->
+                    <div class="result-card fade-in delay-1">
+                        <h4>HOG Feature Representation</h4>
+                        <p>This visualization highlights how HOG captures structural information from the images,
+                            producing more discriminative features for classification models.</p>
+                        <img src="images/HOG Mariposa.png" alt="HOG Visualization"
+                            style="width:100%; border-radius:8px; margin-top:1rem;">
                     </div>
                 </div>
             </div>
@@ -611,17 +667,20 @@
                 </div>
                 <div class="part-content">
                     <h3>Challenge</h3>
-                    <p>Create a mosaic composed of thumbnails that preserves the structure and appearance of a large reference image.</p>
-                    
+                    <p>Create a mosaic composed of thumbnails that preserves the structure and appearance of a large
+                        reference image.</p>
+
                     <h3>Implementation</h3>
-                    <p>I divided a large image (Tokyo.jpg) into 32x32 pixel blocks and used the CIFAR-10 dataset as thumbnail source. I implemented and compared three approaches to find the most similar thumbnail for each block:</p>
+                    <p>I divided a large image (Tokyo.jpg) into 32x32 pixel blocks and used the CIFAR-10 dataset as
+                        thumbnail source. I implemented and compared three approaches to find the most similar thumbnail
+                        for each block:</p>
                     <ul>
                         <li><strong>RGB Mean</strong>: Calculates average color of each block and thumbnail</li>
                         <li><strong>HSV Histogram</strong>: Uses color distribution in HSV space</li>
                         <li><strong>Combined</strong>: Combines RGB mean with HSV histogram and color adjustment</li>
                     </ul>
                     <p>For comparison, I used Euclidean and Cityblock (L1) distances.</p>
-                    
+
                     <h3>Evaluation</h3>
                     <p>I compared results using three objective metrics:</p>
                     <ul>
@@ -629,7 +688,7 @@
                         <li><strong>SSIM (Structural Similarity)</strong>: Evaluates structural similarity</li>
                         <li><strong>ΔE (Delta E)</strong>: Measures perceptual color difference</li>
                     </ul>
-                    
+
                     <h3>Results</h3>
                     <table>
                         <thead>
@@ -661,17 +720,31 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="results-grid">
                         <div class="result-card">
                             <h4>Results Analysis</h4>
-                            <p>The combined method (RGB+HSV+Adjust) achieved the best PSNR and lowest color difference (ΔE), proving to be the most faithful to the original image. Although the HSV method achieved the best SSIM, its visual performance was less natural due to prioritizing structure over chromatic fidelity.</p>
-                            <p>The color adjustment applied in the combined method was crucial for improving chromatic correspondence between original blocks and selected thumbnails.</p>
+                            <p>The combined method (RGB+HSV+Adjust) achieved the best PSNR and lowest color difference
+                                (ΔE), proving to be the most faithful to the original image. Although the HSV method
+                                achieved the best SSIM, its visual performance was less natural due to prioritizing
+                                structure over chromatic fidelity.</p>
+                            <p>The color adjustment applied in the combined method was crucial for improving chromatic
+                                correspondence between original blocks and selected thumbnails.</p>
                         </div>
                         <div class="result-card">
                             <h4>Visual Conclusion</h4>
-                            <p>Visual evaluation confirmed quantitative results: the mosaic generated with the combined method presents the best combination of structural detail and chromatic fidelity, creating a more recognizable representation of the original image.</p>
+                            <p>Visual evaluation confirmed quantitative results: the mosaic generated with the combined
+                                method presents the best combination of structural detail and chromatic fidelity,
+                                creating a more recognizable representation of the original image.</p>
                         </div>
+                    </div>
+                    <div class="result-card fade-in delay-1">
+                        <h4>Visual Comparison of Mosaic Methods</h4>
+                        <p>This combined figure shows the original image next to the three mosaic versions created with
+                            different descriptors. The combined method offers the best balance between structure and
+                            color fidelity.</p>
+                        <img src="images/Comparacion tres mosaicos.png" alt="Comparison of Mosaic Methods"
+                            style="width:100%; border-radius:8px; margin-top:1rem;">
                     </div>
                 </div>
             </div>
@@ -687,21 +760,29 @@
             <div class="results-grid fade-in">
                 <div class="result-card">
                     <h4><i class="fas fa-compress-arrows-alt"></i> Image Compression</h4>
-                    <p>The custom implementation of the DCT compression algorithm demonstrated that it's possible to surpass the JPEG standard by optimizing the quantization matrix. Results suggest that adaptive matrices could offer significant improvements over the standard approach.</p>
+                    <p>The custom implementation of the DCT compression algorithm demonstrated that it's possible to
+                        surpass the JPEG standard by optimizing the quantization matrix. Results suggest that adaptive
+                        matrices could offer significant improvements over the standard approach.</p>
                 </div>
                 <div class="result-card">
                     <h4><i class="fas fa-brain"></i> Classification with ML</h4>
-                    <p>Using HOG features consistently improves the performance of distance-based classification models like KNN and SVM. SVM with RBF kernel was confirmed as the most effective algorithm for this task, achieving accuracies close to 99%.</p>
+                    <p>Using HOG features consistently improves the performance of distance-based classification models
+                        like KNN and SVM. SVM with RBF kernel was confirmed as the most effective algorithm for this
+                        task, achieving accuracies close to 99%.</p>
                 </div>
                 <div class="result-card">
                     <h4><i class="fas fa-th"></i> Photographic Mosaics</h4>
-                    <p>The combination of multiple descriptors (RGB + HSV) with color adjustment produces the best results in mosaic generation, balancing structural and chromatic fidelity. This hybrid approach surpasses methods using individual descriptors.</p>
+                    <p>The combination of multiple descriptors (RGB + HSV) with color adjustment produces the best
+                        results in mosaic generation, balancing structural and chromatic fidelity. This hybrid approach
+                        surpasses methods using individual descriptors.</p>
                 </div>
             </div>
-            
+
             <div class="fade-in delay-1" style="text-align: center; margin-top: 3rem;">
                 <h3>Next Steps</h3>
-                <p>As future extensions of this work, we could explore the use of adaptive quantization matrices based on image content, the application of convolutional neural networks for digit classification, and the integration of semantic criteria in mosaic generation.</p>
+                <p>As future extensions of this work, we could explore the use of adaptive quantization matrices based
+                    on image content, the application of convolutional neural networks for digit classification, and the
+                    integration of semantic criteria in mosaic generation.</p>
             </div>
         </div>
     </section>
@@ -714,7 +795,8 @@
                 <p>Feel free to contact me for professional opportunities or research projects.</p>
                 <div class="social-links">
                     <a href="https://github.com/jmalfaro2019" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="www.linkedin.com/in/jose-alfaro-334327291" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="www.linkedin.com/in/jose-alfaro-334327291" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
                     <a href="mailto:jose.alfaro@etu.imt-nord-europe.fr"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p>&copy; 2025 Jose Alfaro. All rights reserved.</p>
@@ -724,31 +806,32 @@
 
     <script>
         // Simple animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOnScroll = function() {
+
+            const fadeInOnScroll = function () {
                 fadeElements.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
                     const elementVisible = 150;
-                    
+
                     if (elementTop < window.innerHeight - elementVisible) {
                         element.style.opacity = "1";
                         element.style.transform = "translateY(0)";
                     }
                 });
             };
-            
+
             // Set initial state
             fadeElements.forEach(element => {
                 element.style.opacity = "0";
                 element.style.transform = "translateY(20px)";
                 element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
             });
-            
+
             window.addEventListener('scroll', fadeInOnScroll);
             fadeInOnScroll(); // Check on load
         });
     </script>
 </body>
+
 </html>
